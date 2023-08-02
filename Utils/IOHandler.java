@@ -7,7 +7,7 @@ public class IOHandler {
     public static int[] handleArrayInput(){
         Scanner scanner = new Scanner(System.in);
 
-        scanner.nextLine(); //skip array length
+        scanner.nextLine().trim(); //skip array length
 
         String array = scanner.nextLine();
         String[] splitVals = array.split(" ");
@@ -26,5 +26,6 @@ public class IOHandler {
             if(i!=arr.length-1) System.out.print(" ");
         }
         // System.out.print("\"");
+        System.out.println();
     }
 }
