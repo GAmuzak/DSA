@@ -2,8 +2,6 @@ package Phase1.ArraysAndStrings;
 
 import java.util.Arrays;
 
-import Utils.IOHandler;
-
 public class EquilibriumIndex {
 
     public static int arraySum(int [] arr){
