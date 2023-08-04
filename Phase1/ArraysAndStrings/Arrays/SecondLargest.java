@@ -1,4 +1,4 @@
-package Phase1.ArraysAndStrings;
+package Phase1.ArraysAndStrings.Arrays;
 
 public class SecondLargest {
     private static int getSecondLargest(int[] arr) {

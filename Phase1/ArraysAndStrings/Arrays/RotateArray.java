@@ -1,4 +1,4 @@
-package Phase1.ArraysAndStrings;
+package Phase1.ArraysAndStrings.Arrays;
 
 import java.util.Arrays;
 import java.util.Scanner;

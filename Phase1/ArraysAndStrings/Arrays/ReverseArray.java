@@ -1,4 +1,4 @@
-package Phase1.ArraysAndStrings;
+package Phase1.ArraysAndStrings.Arrays;
 
 public class ReverseArray {
     private static int[] reverse(int[] arr) {

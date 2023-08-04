@@ -1,10 +1,8 @@
-package Phase1.ArraysAndStrings;
+package Phase1.ArraysAndStrings.Arrays;
 
 import java.lang.Math;
 
-import Utils.IOHandler;
-
-
+// import Utils.IOHandler;
 
 public class SmallestPositiveInt {
     public static int firstMissing(int[] arr) {
@@ -18,7 +16,7 @@ public class SmallestPositiveInt {
             if(arr[targetIndex]>0) arr[targetIndex]*=-1;
             else if(arr[targetIndex]==0) arr[targetIndex] = -1*(arr.length+1);
         }
-        IOHandler.printArray(arr);
+        // IOHandler.printArray(arr);
         for (int i = 0; i < arr.length; i++) {
             if(arr[i]>=0) {
                 missingNum = i+1; break;
