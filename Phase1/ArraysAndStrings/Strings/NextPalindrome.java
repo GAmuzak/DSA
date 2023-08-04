@@ -13,16 +13,33 @@ public class NextPalindrome {
             center = number.substring((length/2), (length/2)+1);
             palin.append(center);
         }
-        String right = left.reverse().toString();
+        StringBuilder right = new StringBuilder(left);
+        right = right.reverse();
         palin.append(right);
 
-        
+        if(Integer.parseInt(number)>Integer.parseInt(palin.toString())){
+            if(isOddLength){
+                int centerNum = Integer.parseInt(center);
+                if(centerNum!=9){
+                    centerNum++;
+                    palin = new StringBuilder(left);
+                    palin.append(centerNum);
+                    palin.append(right);
+                    return palin.toString();
+                }
+                else{
+                    center = "0";
+                }
+            }
 
-        return "";
+            
+        }
+
+        return palin.toString();
 	}
 
     public static void main(String[] args) {
-        String inp = "24395";
+        String inp = "24956";
         String op = nextLargestPalindrome(inp, inp.length());
         System.out.println(op);
     }
