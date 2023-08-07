@@ -1,4 +1,4 @@
-package Phase1.ArraysAndStrings.MultiDimArrays;
+package Phase1.Matrices;
 
 public class SymMatrix {
     public static boolean isMatrixSymmetric(int[][] matrix) {

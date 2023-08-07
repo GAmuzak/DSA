@@ -1,4 +1,4 @@
-package Phase1.ArraysAndStrings.MultiDimArrays;
+package Phase1.Matrices;
 
 import Utils.IOHandler;
 
