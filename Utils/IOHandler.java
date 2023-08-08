@@ -1,6 +1,8 @@
 package Utils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Set;
 import java.util.Scanner;
 
 public class IOHandler {
@@ -36,13 +38,28 @@ public class IOHandler {
         System.out.println();
     }
 
-    public static void print2dArray(int[][] arr){
+    public static void print2dArray(int[][] arr) {
         for (int[] row : arr) {
             for (int i = 0; i < row.length; i++) {
                 System.out.print(row[i]);
-                if(i!=row.length-1) System.out.print(" ");
+                if (i != row.length - 1)
+                    System.out.print(" ");
             }
             System.out.println();
         }
+    }
+    
+    public static void printHashSetChar(Set<Character> set) {
+        for (Character character : set) {
+            System.out.print(character + " ");
+        }
+        System.out.println();
+    }
+
+    public static void printHashMapChartoInt(HashMap<Character, Integer> map) {
+        for (Character c : map.keySet()) {
+            System.out.print(c + ":" + map.get(c) + "; ");
+        }
+        System.out.println();
     }
 }
