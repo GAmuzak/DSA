@@ -1,6 +1,7 @@
 package Phase1.Matrices;
 
 import Utils.IOHandler;
+import Utils.PrimitiveObjectConverter;
 
 public class SetZero {
     public static void setZeros(int matrix[][]) {
@@ -42,6 +43,7 @@ public class SetZero {
             {85, 100, 40, 0} 
         };
         setZeros(twoDArray);
-        IOHandler.print2dArray(twoDArray);
+        Integer[][] finalArr = PrimitiveObjectConverter.ConvertToObjectArray(twoDArray);
+        IOHandler.print2dArray(finalArr);
     }
 }

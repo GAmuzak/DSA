@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import Utils.IOHandler;
+import Utils.PrimitiveObjectConverter;
 
 public class RotateArray {
 
@@ -21,15 +22,19 @@ public class RotateArray {
 
     public static void main(String[] args) {
 
-        int[] arr = IOHandler.handleArrayInput();
+        Integer[] arr = IOHandler.handleArrayInput(Integer.class);
 
         Scanner scanner = new Scanner(System.in);
         String num = scanner.nextLine();
         int k = Integer.parseInt(num);
         scanner.close();
-        
-        int[] rotatedArray = Rotate(arr,k);
 
-        IOHandler.printArray(rotatedArray);
+        int[] intArray = PrimitiveObjectConverter.convertToPrimitiveArray(arr);
+        
+        int[] rotatedArray = Rotate(intArray, k);
+        
+        Integer[] finalArr = PrimitiveObjectConverter.ConvertToObjectArray(rotatedArray);
+
+        IOHandler.printArray(finalArr);
     }
 }

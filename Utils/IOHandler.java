@@ -7,58 +7,67 @@ import java.util.Scanner;
 
 public class IOHandler {
     @SuppressWarnings("resource")
-    public static int[] handleArrayInput(){
+    public static <T> T[] handleArrayInput(Class<T> cType) {
         Scanner scanner = new Scanner(System.in);
-
-        scanner.nextLine().trim();
-
+        
+        scanner.nextLine(); // Consume the first line (trimming isn't needed here)
+        
         String array = scanner.nextLine();
         String[] splitVals = array.split(" ");
-        int[] arr = new int[splitVals.length];
+        @SuppressWarnings("unchecked")
+        T[] arr = (T[]) java.lang.reflect.Array.newInstance(cType, splitVals.length);
+        
         for (int i = 0; i < arr.length; i++) {
-            arr[i] = Integer.parseInt(splitVals[i]);
+            try {
+                arr[i] = cType.getConstructor(String.class).newInstance(splitVals[i]);
+            } catch (ReflectiveOperationException | IllegalArgumentException e) {
+                // Handle exceptions more gracefully
+                System.err.println("Error creating instance for element at index " + i + ": " + e.getMessage());
+                // You might want to consider throwing an exception here depending on your use case
+            }
         }
 
         return arr;
     }
 
-    public static void printArray(int[] arr){
+    public static <T> void printArray(T[] arr){
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]);
-            if(i!=arr.length-1) System.out.print(" ");
+            if(i != arr.length - 1) System.out.print(" ");
         }
         System.out.println();
     }
 
-    public static void printArrayList(ArrayList<Integer> arr){
+    public static <T> void printArrayList(ArrayList<T> arr) {
         for (int i = 0; i < arr.size(); i++) {
             System.out.print(arr.get(i));
-            if(i!=arr.size()-1) System.out.print(" ");
+            if (i != arr.size() - 1)
+                System.out.print(" ");
         }
         System.out.println();
-    }
-
-    public static void print2dArray(int[][] arr) {
-        for (int[] row : arr) {
-            for (int i = 0; i < row.length; i++) {
-                System.out.print(row[i]);
-                if (i != row.length - 1)
-                    System.out.print(" ");
-            }
-            System.out.println();
-        }
     }
     
-    public static void printHashSetChar(Set<Character> set) {
-        for (Character character : set) {
-            System.out.print(character + " ");
+    public static <T> void print2dArray(T[][] arr) {
+    for (T[] row : arr) {
+        for (int i = 0; i < row.length; i++) {
+            System.out.print(row[i]);
+            if (i != row.length - 1)
+                System.out.print(" ");
+        }
+        System.out.println();
+    }
+}
+
+    public static <T> void printHashSet(Set<T> set) {
+        for (T item : set) {
+            System.out.print(item + " ");
         }
         System.out.println();
     }
 
-    public static void printHashMapChartoInt(HashMap<Character, Integer> map) {
-        for (Character c : map.keySet()) {
-            System.out.print(c + ":" + map.get(c) + "; ");
+    public static <K, V> void printHashMap(HashMap<K, V> map) {
+        for (K key : map.keySet()) {
+            System.out.print(key + ":" + map.get(key) + "; ");
         }
         System.out.println();
     }
