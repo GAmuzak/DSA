@@ -8,10 +8,7 @@ import java.util.Scanner;
 public class IOHandler {
     @SuppressWarnings("resource")
     public static <T> T[] handleArrayInput(Class<T> cType) {
-        Scanner scanner = new Scanner(System.in);
-        
-        scanner.nextLine(); // Consume the first line (trimming isn't needed here)
-        
+        Scanner scanner = new Scanner(System.in);        
         String array = scanner.nextLine();
         String[] splitVals = array.split(" ");
         @SuppressWarnings("unchecked")
@@ -21,9 +18,7 @@ public class IOHandler {
             try {
                 arr[i] = cType.getConstructor(String.class).newInstance(splitVals[i]);
             } catch (ReflectiveOperationException | IllegalArgumentException e) {
-                // Handle exceptions more gracefully
                 System.err.println("Error creating instance for element at index " + i + ": " + e.getMessage());
-                // You might want to consider throwing an exception here depending on your use case
             }
         }
 
@@ -70,5 +65,13 @@ public class IOHandler {
             System.out.print(key + ":" + map.get(key) + "; ");
         }
         System.out.println();
+    }
+
+    public static <T> ArrayList<T> arrayListInit(T[] arr) {
+        ArrayList<T> arList = new ArrayList<T>();
+        for (int i = 0; i < arr.length; i++) {
+            arList.add(arr[i]);
+        }
+        return arList;
     }
 }

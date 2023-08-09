@@ -2,27 +2,19 @@ package Phase1.MapsAndSets;
 
 import java.util.ArrayList;
 
+import Utils.IOHandler;
+
 public class LongestSubArrayZeroSum {
     public static int LongestSubsetWithZeroSum(ArrayList<Integer> arr) {
-
-        // Write your code here.
+        
         return 0;
     }
 
     public static void main(String[] args) {
         ArrayList<Integer> arr = new ArrayList<Integer>();
-        arr.add(1);
-        arr.add(-1);
-        arr.add(3);
-        arr.add(2);
-        arr.add(-2);
-        arr.add(-8);
-        arr.add(1);
-        arr.add(7);
-        arr.add(1);
-        arr.add(0);
-        arr.add(2);
-        arr.add(3);
-        
+        Integer[] inp = { 1, -1, 3, 2, -2, -8, 1, 7, 1, 0, 2, 3};
+        arr = IOHandler.arrayListInit(inp);
+        int sol = LongestSubsetWithZeroSum(arr);
+        System.out.println(sol);
     }
 }
