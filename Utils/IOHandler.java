@@ -46,7 +46,7 @@ public class IOHandler {
         for (int i = 0; i < arr.size(); i++) {
             ArrayList<T> row = arr.get(i);
             for (int j = 0; j < row.size(); j++) {
-                System.out.print(row.get(j));
+                System.out.print(row.get(j)+ " ");
                 if (i != row.size() - 1)
                     System.out.print(" ");
             }
