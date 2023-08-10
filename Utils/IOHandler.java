@@ -41,6 +41,18 @@ public class IOHandler {
         }
         System.out.println();
     }
+
+    public static <T> void print2dArrayList(ArrayList<ArrayList<T>> arr) {
+        for (int i = 0; i < arr.size(); i++) {
+            ArrayList<T> row = arr.get(i);
+            for (int j = 0; j < row.size(); j++) {
+                System.out.print(row.get(j));
+                if (i != row.size() - 1)
+                    System.out.print(" ");
+            }
+            System.out.println();
+        }
+    }
     
     public static <T> void print2dArray(T[][] arr) {
     for (T[] row : arr) {
