@@ -3,7 +3,7 @@ package Phase1.BasicAlgorithms;
 import Utils.IOHandler;
 import Utils.PrimitiveObjectConverter;
 
-public class MajorityElement {
+public class MooresAlgorithm {
     public static int findMajority(int[] arr, int n) {
         int maj = 0;
         int majCount = 0;
