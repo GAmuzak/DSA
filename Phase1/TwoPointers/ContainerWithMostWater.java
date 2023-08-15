@@ -1,7 +1,7 @@
 package Phase1.TwoPointers;
 
 import Utils.IOHandler;
-import Utils.PrimitiveObjectConverter;
+import Utils.Converter;
 
 public class ContainerWithMostWater {
 
@@ -10,7 +10,7 @@ public class ContainerWithMostWater {
         int product = (right - left) * lesser;
         return Math.max(currentGreatest, product);
     }
-    
+
     public static int maxArea(int[] height) {
         int left = 0, right = height.length - 1;
         int biggestArea = -1;
@@ -27,7 +27,7 @@ public class ContainerWithMostWater {
 
     public static void main(String[] args) {
         Integer[] arrInp = IOHandler.handleArrayInput(Integer.class);
-        int arr[] = PrimitiveObjectConverter.convertToPrimitiveArray(arrInp);
+        int arr[] = Converter.toPrimitive(arrInp);
         int sol = maxArea(arr);
         System.out.println(sol);
     }

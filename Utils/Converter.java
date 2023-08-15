@@ -1,7 +1,7 @@
 package Utils;
 
-public class PrimitiveObjectConverter {
-    public static Integer[][] ConvertToObjectArray(int[][] arr) {
+public class Converter {
+    public static Integer[][] toObject(int[][] arr) {
         Integer[][] result = new Integer[arr.length][];
 
         for (int i = 0; i < arr.length; i++) {
@@ -13,8 +13,8 @@ public class PrimitiveObjectConverter {
 
         return result;
     }
-    
-    public static Integer[] ConvertToObjectArray(int[] arr) {
+
+    public static Integer[] toObject(int[] arr) {
         Integer[] result = new Integer[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
@@ -23,8 +23,8 @@ public class PrimitiveObjectConverter {
 
         return result;
     }
-    
-    public static int[] convertToPrimitiveArray(Integer[] arr) {
+
+    public static int[] toPrimitive(Integer[] arr) {
         int[] result = new int[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
@@ -33,8 +33,8 @@ public class PrimitiveObjectConverter {
 
         return result;
     }
-    
-    public static int[][] convertToPrimitiveArray(Integer[][] arr) {
+
+    public static int[][] toPrimitive(Integer[][] arr) {
         int[][] result = new int[arr.length][];
 
         for (int i = 0; i < arr.length; i++) {
@@ -46,8 +46,8 @@ public class PrimitiveObjectConverter {
 
         return result;
     }
-    
-    public static Character[] ConvertToObjectArray(char[] arr) {
+
+    public static Character[] toObject(char[] arr) {
         Character[] result = new Character[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
@@ -57,7 +57,7 @@ public class PrimitiveObjectConverter {
         return result;
     }
 
-    public static Character[][] ConvertToObjectArray(char[][] arr) {
+    public static Character[][] toObject(char[][] arr) {
         Character[][] result = new Character[arr.length][];
 
         for (int i = 0; i < arr.length; i++) {
@@ -69,8 +69,8 @@ public class PrimitiveObjectConverter {
 
         return result;
     }
-    
-    public static char[] convertToPrimitiveArray(Character[] arr) {
+
+    public static char[] toPrimitive(Character[] arr) {
         char[] result = new char[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
@@ -80,7 +80,7 @@ public class PrimitiveObjectConverter {
         return result;
     }
 
-    public static char[][] convertToPrimitiveArray(Character[][] arr) {
+    public static char[][] toPrimitive(Character[][] arr) {
         char[][] result = new char[arr.length][];
 
         for (int i = 0; i < arr.length; i++) {
@@ -93,17 +93,17 @@ public class PrimitiveObjectConverter {
         return result;
     }
 
-    public static Short[] convertToShortArray(short[] arr) {
-    Short[] result = new Short[arr.length];
+    public static Short[] toObject(short[] arr) {
+        Short[] result = new Short[arr.length];
 
-    for (int i = 0; i < arr.length; i++) {
-        result[i] = arr[i];
+        for (int i = 0; i < arr.length; i++) {
+            result[i] = arr[i];
+        }
+
+        return result;
     }
 
-    return result;
-    }
-
-    public static short[] convertToPrimitiveArray(Short[] arr) {
+    public static short[] toPrimitive(Short[] arr) {
         short[] result = new short[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
@@ -113,17 +113,17 @@ public class PrimitiveObjectConverter {
         return result;
     }
 
-    public static Long[] convertToLongArray(long[] arr) {
-    Long[] result = new Long[arr.length];
+    public static Long[] toObject(long[] arr) {
+        Long[] result = new Long[arr.length];
 
-    for (int i = 0; i < arr.length; i++) {
-        result[i] = arr[i];
+        for (int i = 0; i < arr.length; i++) {
+            result[i] = arr[i];
+        }
+
+        return result;
     }
 
-    return result;
-    }
-
-    public static long[] convertToPrimitiveArray(Long[] arr) {
+    public static long[] toPrimitive(Long[] arr) {
         long[] result = new long[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
@@ -133,17 +133,17 @@ public class PrimitiveObjectConverter {
         return result;
     }
 
-    public static Float[] convertToFloatArray(float[] arr) {
-    Float[] result = new Float[arr.length];
+    public static Float[] toObject(float[] arr) {
+        Float[] result = new Float[arr.length];
 
-    for (int i = 0; i < arr.length; i++) {
-        result[i] = arr[i];
+        for (int i = 0; i < arr.length; i++) {
+            result[i] = arr[i];
+        }
+
+        return result;
     }
 
-    return result;
-    }
-
-    public static float[] convertToPrimitiveArray(Float[] arr) {
+    public static float[] toPrimitive(Float[] arr) {
         float[] result = new float[arr.length];
 
         for (int i = 0; i < arr.length; i++) {
@@ -152,17 +152,18 @@ public class PrimitiveObjectConverter {
 
         return result;
     }
-    public static Double[] convertToDoubleArray(double[] arr) {
-    Double[] result = new Double[arr.length];
 
-    for (int i = 0; i < arr.length; i++) {
-        result[i] = arr[i];
+    public static Double[] toObject(double[] arr) {
+        Double[] result = new Double[arr.length];
+
+        for (int i = 0; i < arr.length; i++) {
+            result[i] = arr[i];
+        }
+
+        return result;
     }
 
-    return result;
-    }
-
-    public static double[] convertToPrimitiveArray(Double[] arr) {
+    public static double[] toPrimitive(Double[] arr) {
         double[] result = new double[arr.length];
 
         for (int i = 0; i < arr.length; i++) {

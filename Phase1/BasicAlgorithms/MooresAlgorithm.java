@@ -1,7 +1,7 @@
 package Phase1.BasicAlgorithms;
 
 import Utils.IOHandler;
-import Utils.PrimitiveObjectConverter;
+import Utils.Converter;
 
 public class MooresAlgorithm {
     public static int findMajority(int[] arr, int n) {
@@ -32,7 +32,7 @@ public class MooresAlgorithm {
 
     public static void main(String[] args) {
         Integer[] arrInp = IOHandler.handleArrayInput(Integer.class);
-        int[] arr = PrimitiveObjectConverter.convertToPrimitiveArray(arrInp);
+        int[] arr = Converter.toPrimitive(arrInp);
         int sol = findMajority(arr, arr.length);
         System.out.println(sol);
     }

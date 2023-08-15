@@ -4,11 +4,11 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 import Utils.IOHandler;
-import Utils.PrimitiveObjectConverter;
+import Utils.Converter;
 
 public class RotateArray {
 
-    public static int[] Rotate(int[]arr, int k){
+    public static int[] Rotate(int[] arr, int k) {
         int[] rotatedArray = new int[arr.length];
 
         int[] leftPart = Arrays.copyOfRange(arr, k, arr.length);
@@ -29,11 +29,11 @@ public class RotateArray {
         int k = Integer.parseInt(num);
         scanner.close();
 
-        int[] intArray = PrimitiveObjectConverter.convertToPrimitiveArray(arr);
-        
+        int[] intArray = Converter.toPrimitive(arr);
+
         int[] rotatedArray = Rotate(intArray, k);
-        
-        Integer[] finalArr = PrimitiveObjectConverter.ConvertToObjectArray(rotatedArray);
+
+        Integer[] finalArr = Converter.toObject(rotatedArray);
 
         IOHandler.printArray(finalArr);
     }

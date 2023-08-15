@@ -1,7 +1,7 @@
 package Phase1.TwoPointers;
 
 import Utils.IOHandler;
-import Utils.PrimitiveObjectConverter;
+import Utils.Converter;
 
 public class NegPosSeparation {
 
@@ -15,10 +15,10 @@ public class NegPosSeparation {
         int left = 0, right = a.length - 1;
         while (left < right) {
             if (a[left] < 0) {
-                //already negative
+                // already negative
                 left++;
             } else if (a[right] >= 0) {
-                //already positive
+                // already positive
                 right--;
             } else {
                 swap(a, left, right);
@@ -28,12 +28,12 @@ public class NegPosSeparation {
         }
         return a;
     }
-    
+
     public static void main(String[] args) {
         Integer[] arrInp = IOHandler.handleArrayInput(Integer.class);
-        int arr[] = PrimitiveObjectConverter.convertToPrimitiveArray(arrInp);
+        int arr[] = Converter.toPrimitive(arrInp);
         int[] newArr = separateNegativeAndPositive(arr);
-        Integer[] sol = PrimitiveObjectConverter.ConvertToObjectArray(newArr);
+        Integer[] sol = Converter.toObject(newArr);
         IOHandler.printArray(sol);
     }
 

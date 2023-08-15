@@ -3,7 +3,7 @@ package Phase1.TwoPointers;
 import java.util.Scanner;
 
 import Utils.IOHandler;
-import Utils.PrimitiveObjectConverter;
+import Utils.Converter;
 
 public class PairSum {
 
@@ -24,12 +24,12 @@ public class PairSum {
                 left++;
             }
         }
-        return pairCount>0?pairCount:-1;
+        return pairCount > 0 ? pairCount : -1;
     }
 
     public static void main(String[] args) {
         Integer[] arr = IOHandler.handleArrayInput(Integer.class);
-        int[] arrInts = PrimitiveObjectConverter.convertToPrimitiveArray(arr);
+        int[] arrInts = Converter.toPrimitive(arr);
         Scanner sc = new Scanner(System.in);
         int target = sc.nextInt();
         sc.close();

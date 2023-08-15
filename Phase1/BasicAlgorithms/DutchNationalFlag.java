@@ -1,7 +1,7 @@
 package Phase1.BasicAlgorithms;
 
 import Utils.IOHandler;
-import Utils.PrimitiveObjectConverter;
+import Utils.Converter;
 
 public class DutchNationalFlag {
 
@@ -33,11 +33,12 @@ public class DutchNationalFlag {
             }
         }
     }
+
     public static void main(String[] args) {
         Integer[] arrInp = IOHandler.handleArrayInput(Integer.class);
-        int[] arr = PrimitiveObjectConverter.convertToPrimitiveArray(arrInp);
+        int[] arr = Converter.toPrimitive(arrInp);
         sort012(arr);
-        Integer[] op = PrimitiveObjectConverter.ConvertToObjectArray(arr);
+        Integer[] op = Converter.toObject(arr);
         IOHandler.printArray(op);
     }
 }

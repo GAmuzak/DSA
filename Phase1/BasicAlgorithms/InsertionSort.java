@@ -1,7 +1,7 @@
 package Phase1.BasicAlgorithms;
 
 import Utils.IOHandler;
-import Utils.PrimitiveObjectConverter;
+import Utils.Converter;
 
 public class InsertionSort {
 
@@ -14,7 +14,7 @@ public class InsertionSort {
     public static void insertionSort(int n, int[] arr) {
         for (int i = 1; i < n; i++) {
             int j = i;
-            while (j>0 && arr[j] < arr[j - 1]) {
+            while (j > 0 && arr[j] < arr[j - 1]) {
                 swap(arr, j, j - 1);
                 j--;
             }
@@ -23,9 +23,9 @@ public class InsertionSort {
 
     public static void main(String[] args) {
         Integer[] arrInp = IOHandler.handleArrayInput(Integer.class);
-        int[] arr = PrimitiveObjectConverter.convertToPrimitiveArray(arrInp);
+        int[] arr = Converter.toPrimitive(arrInp);
         insertionSort(arr.length, arr);
-        Integer[] op = PrimitiveObjectConverter.ConvertToObjectArray(arr);
+        Integer[] op = Converter.toObject(arr);
         IOHandler.printArray(op);
     }
 }
