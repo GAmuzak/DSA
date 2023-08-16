@@ -1,6 +1,5 @@
 package Phase1.AllTypes;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 
 import Utils.Converter;
