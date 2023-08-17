@@ -1,10 +1,5 @@
 package Phase1.AllTypes;
 
-import java.util.ArrayList;
-
-import Utils.Converter;
-import Utils.IOHandler;
-
 public class MultiplyStrings {
 
     public static String reverseString(String str) {
@@ -47,7 +42,6 @@ public class MultiplyStrings {
             }
             finalSol.append(res[i]);
         }
-        System.out.println(finalSol);
         return finalSol.toString();
     }
 
