@@ -8,12 +8,12 @@ import java.util.Scanner;
 public class IOHandler {
     @SuppressWarnings("resource")
     public static <T> T[] handleArrayInput(Class<T> cType) {
-        Scanner scanner = new Scanner(System.in);        
+        Scanner scanner = new Scanner(System.in);
         String array = scanner.nextLine();
         String[] splitVals = array.split(" ");
         @SuppressWarnings("unchecked")
         T[] arr = (T[]) java.lang.reflect.Array.newInstance(cType, splitVals.length);
-        
+
         for (int i = 0; i < arr.length; i++) {
             try {
                 arr[i] = cType.getConstructor(String.class).newInstance(splitVals[i]);
@@ -25,10 +25,11 @@ public class IOHandler {
         return arr;
     }
 
-    public static <T> void printArray(T[] arr){
+    public static <T> void printArray(T[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i]);
-            if(i != arr.length - 1) System.out.print(" ");
+            if (i != arr.length - 1)
+                System.out.print(" ");
         }
         System.out.println();
     }
@@ -46,24 +47,24 @@ public class IOHandler {
         for (int i = 0; i < arr.size(); i++) {
             ArrayList<T> row = arr.get(i);
             for (int j = 0; j < row.size(); j++) {
-                System.out.print(row.get(j)+ " ");
-                if (i != row.size() - 1)
+                System.out.print(row.get(j));
+                if (j != row.size() - 1)
                     System.out.print(" ");
             }
             System.out.println();
         }
     }
-    
+
     public static <T> void print2dArray(T[][] arr) {
-    for (T[] row : arr) {
-        for (int i = 0; i < row.length; i++) {
-            System.out.print(row[i]);
-            if (i != row.length - 1)
-                System.out.print(" ");
+        for (T[] row : arr) {
+            for (int i = 0; i < row.length; i++) {
+                System.out.print(row[i]);
+                if (i != row.length - 1)
+                    System.out.print(" ");
+            }
+            System.out.println();
         }
-        System.out.println();
     }
-}
 
     public static <T> void printHashSet(Set<T> set) {
         for (T item : set) {
