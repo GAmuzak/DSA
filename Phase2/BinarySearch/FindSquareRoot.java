@@ -7,7 +7,6 @@ public class FindSquareRoot {
         long mid = 0;
         while (left <= right) {
             mid = (right + left) / 2;
-            System.out.println(left + " " + mid + " " + right);
             long midSqr = mid * mid;
             if (midSqr == N) {
                 return (int) mid;
