@@ -44,7 +44,6 @@ public class SingleElement {
 
     public static void main(String[] args) {
         int[] arr = { 1, 1, 2, 3, 3, 4, 4, 8, 8 };
-        ArrayList<Integer> arrList = IOHandler.arrayListInit(Converter.toObject(arr));
         int sol = singleNonDuplicate(arr);
         System.out.println(sol);
     }
