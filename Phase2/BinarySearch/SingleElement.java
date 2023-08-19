@@ -1,10 +1,5 @@
 package Phase2.BinarySearch;
 
-import java.util.ArrayList;
-
-import Utils.Converter;
-import Utils.IOHandler;
-
 public class SingleElement {
 
     public static int singleNonDuplicate(int[] arr) {
