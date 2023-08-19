@@ -87,4 +87,16 @@ public class IOHandler {
         }
         return arList;
     }
+
+    public static <T> ArrayList<ArrayList<T>> arrayList2DInit(T[][] arr) {
+        ArrayList<ArrayList<T>> arList2D = new ArrayList<>();
+        for (int i = 0; i < arr.length; i++) {
+            ArrayList<T> rowList = new ArrayList<>();
+            for (int j = 0; j < arr[i].length; j++) {
+                rowList.add(arr[i][j]);
+            }
+            arList2D.add(rowList);
+        }
+        return arList2D;
+    }
 }
