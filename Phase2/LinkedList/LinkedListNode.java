@@ -1,9 +1,9 @@
 package Phase2.LinkedList;
 
-class LinkedListNode<T> {
-    T data;
-    LinkedListNode<T> next;
-    public LinkedListNode(T data) {
+class LinkedListNode {
+    int data;
+    LinkedListNode next;
+    public LinkedListNode(int data) {
         this.data = data;
     }
 }

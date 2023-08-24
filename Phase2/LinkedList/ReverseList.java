@@ -1,8 +1,8 @@
 package Phase2.LinkedList;
 
 public class ReverseList {
-    public static LinkedListNode<Integer> reverseLinkedList(LinkedListNode<Integer> head) {
-        LinkedListNode<Integer> prev = null, curr = head, next = null;
+    public static LinkedListNode reverseLinkedList(LinkedListNode head) {
+        LinkedListNode prev = null, curr = head, next = null;
         while (curr != null) {
             next = curr.next;
             curr.next = prev;
