@@ -2,7 +2,7 @@ package Phase2.StacksAndQueues;
 
 public class StackWithArray {
     public static void main(String[] args) {
-        Stack s = new Stack(10);
+        CStack s = new CStack(10);
         s.push(5);
         s.push(5);
         s.push(5);
@@ -22,12 +22,12 @@ public class StackWithArray {
     }
 }
 
-class Stack {
+class CStack {
     int capacity = 0;
     int currentIdx = -1;
     int[] arr;
 
-    Stack(int capacity) {
+    CStack(int capacity) {
         this.capacity = capacity;
         arr = new int[capacity];
     }
