@@ -1,13 +1,13 @@
 package Phase2.StacksAndQueues;
 
 public class QueueWithArray {
-    class Queue {
+    class SQueue {
 
         int size;
         Node head;
         Node tail;
 
-        Queue() {
+        SQueue() {
             size = 0;
             head = null;
             tail = head;
