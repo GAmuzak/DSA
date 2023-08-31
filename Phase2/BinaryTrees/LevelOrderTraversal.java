@@ -12,14 +12,17 @@ public class LevelOrderTraversal {
         Queue<BinaryTreeNode> nodeQueue = new LinkedList<>();
         nodeQueue.add(root);
         while (!nodeQueue.isEmpty()) {
-            BinaryTreeNode currNode = nodeQueue.peek();
-            sol.add(nodeQueue.poll().val);
-            if (currNode.left != null) {
-                nodeQueue.add(currNode.left);
+            int size = nodeQueue.size();
+            ArrayList<BinaryTreeNode> level = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                BinaryTreeNode currNode = nodeQueue.poll();
+                if (currNode.left != null)
+                    level.add(currNode.left);
+                if (currNode.right != null)
+                    level.add(currNode.right);
+                sol.add(currNode.val);
             }
-            if (currNode.right != null) {
-                nodeQueue.add(currNode.right);
-            }
+            nodeQueue.addAll(level);
         }
         return sol;
     }
