@@ -1,7 +1,7 @@
 package Phase2.BinaryTrees;
 
 public class LCAofBST {
-    public static TreeNode LCAinaBST(TreeNode root, TreeNode p, TreeNode q) {
+    public static TNode LCAinaBST(TNode root, TNode p, TNode q) {
         boolean pLess = (int) p.data < (int) q.data;
         int lesser = pLess ? (int) p.data : (int) q.data;
         int greater = pLess ? (int) q.data : (int) p.data;
@@ -16,27 +16,3 @@ public class LCAofBST {
         return null;
     }
 }
-
-class TreeNode {
-    int data;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-        this.data = 0;
-        this.left = null;
-        this.right = null;
-    }
-
-    TreeNode(int data) {
-        this.data = data;
-        this.left = null;
-        this.right = null;
-    }
-
-    TreeNode(int data, TreeNode left, TreeNode right) {
-        this.data = data;
-        this.left = left;
-        this.right = right;
-    }
-};

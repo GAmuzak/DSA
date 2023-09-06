@@ -13,10 +13,10 @@ public class MakeTreeFromTraversal {
         return map;
     }
 
-    public static TreeNode buildBinaryTree(int[] inorder, int[] preorder) {
+    public static TNode buildBinaryTree(int[] inorder, int[] preorder) {
         if (inorder.length == 0 || preorder.length == 0)
             return null;
-        TreeNode root = new TreeNode(preorder[0]);
+        TNode root = new TNode(preorder[0]);
         HashMap<Integer, Integer> inOrderMap = createValueToIndexMap(inorder);
         int mid = inOrderMap.get(preorder[0]);
 
@@ -30,27 +30,3 @@ public class MakeTreeFromTraversal {
         return root;
     }
 }
-
-class TreeNode {
-    int data;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode() {
-        this.data = 0;
-        this.left = null;
-        this.right = null;
-    }
-
-    TreeNode(int data) {
-        this.data = data;
-        this.left = null;
-        this.right = null;
-    }
-
-    TreeNode(int data, TreeNode left, TreeNode right) {
-        this.data = data;
-        this.left = left;
-        this.right = right;
-    }
-};

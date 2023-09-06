@@ -4,11 +4,11 @@ import java.util.*;
 
 public class TopView {
 
-    public static List<Integer> getTopView(TreeNode root) {
+    public static List<Integer> getTopView(TNode root) {
         List<Integer> solList = new ArrayList<>();
         if (root == null)
             return solList;
-        TreeMap<Integer, TreeNode> layerTracker = new TreeMap<>();
+        TreeMap<Integer, TNode> layerTracker = new TreeMap<>();
         Queue<NodeLayerPair> pairs = new LinkedList<>();
         pairs.add(new NodeLayerPair(0, root));
         while (!pairs.isEmpty()) {
@@ -28,7 +28,7 @@ public class TopView {
             }
             pairs.addAll(level);
         }
-        for (Map.Entry<Integer, TreeNode> entry : layerTracker.entrySet()) {
+        for (Map.Entry<Integer, TNode> entry : layerTracker.entrySet()) {
             solList.add(entry.getValue().data);
         }
         return solList;
@@ -37,22 +37,10 @@ public class TopView {
 
 class NodeLayerPair {
     int layer;
-    TreeNode node;
+    TNode node;
 
-    public NodeLayerPair(int layer, TreeNode node) {
+    public NodeLayerPair(int layer, TNode node) {
         this.layer = layer;
         this.node = node;
-    }
-}
-
-class TreeNode {
-    int data;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int data) {
-        this.data = data;
-        this.left = null;
-        this.right = null;
     }
 }

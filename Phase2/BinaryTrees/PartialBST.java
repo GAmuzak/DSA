@@ -15,13 +15,3 @@ public class PartialBST {
         return isValid(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
 }
-
-class BinaryTreeNode<T> {
-    T data;
-    BinaryTreeNode<T> left;
-    BinaryTreeNode<T> right;
-
-    public BinaryTreeNode(T data) {
-        this.data = data;
-    }
-}
