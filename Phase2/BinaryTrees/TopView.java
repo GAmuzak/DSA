@@ -34,13 +34,3 @@ public class TopView {
         return solList;
     }
 }
-
-class NodeLayerPair {
-    int layer;
-    TNode node;
-
-    public NodeLayerPair(int layer, TNode node) {
-        this.layer = layer;
-        this.node = node;
-    }
-}
