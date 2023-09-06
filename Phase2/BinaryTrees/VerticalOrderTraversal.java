@@ -14,7 +14,7 @@ public class VerticalOrderTraversal {
         }
     }
 
-    public static ArrayList<Integer> verticalOrderTraversal(TreeNode<Integer> root) {
+    public static ArrayList<Integer> verticalOrderTraversal(TNode root) {
         ArrayList<Integer> sol = new ArrayList<>();
         TreeMap<Integer, ArrayList<Integer>> columnTrack = new TreeMap<>();
         Queue<NodeLayerPair> pairs = new LinkedList<>();
@@ -40,14 +40,3 @@ public class VerticalOrderTraversal {
         return sol;
     }
 }
-
-class NodeLayerPair {
-    int layer;
-    TreeNode<Integer> node;
-
-    public NodeLayerPair(int layer, TreeNode<Integer> node) {
-        this.layer = layer;
-        this.node = node;
-    }
-}
-
