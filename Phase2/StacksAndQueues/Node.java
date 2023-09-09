@@ -5,19 +5,19 @@ public class Node {
     public Node next;
     public Node prev;
 
-    Node() {
+    public Node() {
         this.data = 0;
         this.next = null;
         this.prev = null;
     }
 
-    Node(int data) {
+    public Node(int data) {
         this.data = data;
         this.next = null;
         this.prev = null;
     }
 
-    Node(int data, Node next) {
+    public Node(int data, Node next) {
         this.data = data;
         this.next = next;
         this.prev = next;
