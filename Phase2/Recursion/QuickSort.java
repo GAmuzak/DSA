@@ -10,29 +10,30 @@ public class QuickSort {
     public static void swap(List<Integer> arr, int i, int j) {
         if (i == j)
             return;
-        arr.set(i, arr.get(i) + arr.get(j));
-        arr.set(j, arr.get(i) - arr.get(j));
-        arr.set(i, arr.get(i) - arr.get(j));
+        int temp = arr.get(j);
+        arr.set(j, arr.get(i));
+        arr.set(i, temp);
     }
 
-    public static int partition(List<Integer> a, int start, int end) {
-        int pivot = a.get(end);
-        int i = (start - 1);
-        for (int j = start; j <= end - 1; j++) {
-            if (a.get(j) < pivot) {
-                i++;
-                swap(a, i, j);
+    public static int partition(List<Integer> arr, int low, int high) {
+        int pivot = arr.get(high);
+        int leftWall = low - 1;
+        for (int i = low; i < high; i++) {
+            if (arr.get(i) < pivot) {
+                leftWall++;
+                swap(arr, leftWall, i);
             }
         }
-        swap(a, i + 1, end);
-        return (i + 1);
+        swap(arr, high, leftWall + 1);
+        return leftWall + 1;
     }
 
-    public static void quick(List<Integer> a, int start, int end) {
-        if (start < end) {
-            int p = partition(a, start, end);
-            quick(a, start, p - 1);
-            quick(a, p + 1, end);
+    public static void quick(List<Integer> arr, int low, int high) {
+        if (low < high) {
+            int pivotLoc = partition(arr, low, high);
+            System.out.println(pivotLoc);
+            quick(arr, low, pivotLoc - 1);
+            quick(arr, pivotLoc + 1, high);
         }
     }
 
